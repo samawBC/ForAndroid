@@ -1,24 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainFragment">
+    tools:context=".RegisterFragment">
 
-    <!-- content-->
     <LinearLayout
+        android:gravity="center_horizontal"
         android:layout_margin="@dimen/margin1"
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
-        <!--logo-->
-        <ImageView
-            android:src="@drawable/logo1"
-            android:layout_gravity="center"
+        <TextView
+            android:textStyle="bold"
+            android:text="Registration information"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
-        <!--user-->
+        <!--logo-->
+        <ImageView
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/logo1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <!--email-->
         <EditText
             android:inputType="textEmailAddress"
             android:hint="@string/email"
@@ -30,24 +35,24 @@
             android:hint="@string/password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
-        <!--login-->
-        <Button
-            android:text="Login"
+        <!--confirm password-->
+        <EditText
+            android:inputType="textPassword"
+            android:hint="Confirm Password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
-        <!--new register-->
-        <TextView
-            android:clickable="true"
-            android:id="@+id/textViewRegister"
-            android:textStyle="italic"
-            android:layout_marginTop="10dp"
-            android:textSize="@dimen/h2"
-            android:layout_gravity="center_horizontal"
-            android:text="New Register"
-            android:layout_width="wrap_content"
+        <EditText
+            android:inputType="number"
+            android:hint="Telephone Number :"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:text="Register"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
     </LinearLayout>
 
-</RelativeLayout>
+</FrameLayout>
