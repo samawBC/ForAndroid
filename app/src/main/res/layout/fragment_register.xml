@@ -37,6 +37,7 @@
             android:layout_height="150dp" />
         <!--name-->
         <EditText
+            android:id="@+id/edtName"
             android:inputType="text"
             android:hint="Firstname FamilyName"
             android:layout_width="match_parent"
@@ -44,6 +45,7 @@
 
         <!--email-->
         <EditText
+            android:id="@+id/edtEmail"
             android:layout_marginTop="@dimen/MarginTop"
             android:inputType="textEmailAddress"
             android:hint="@string/email"
@@ -51,6 +53,7 @@
             android:layout_height="wrap_content" />
         <!--password-->
         <EditText
+            android:id="@+id/edtPassword"
             android:layout_marginTop="@dimen/MarginTop"
             android:inputType="textPassword"
             android:hint="@string/password"
@@ -58,6 +61,7 @@
             android:layout_height="wrap_content" />
         <!--confirm password-->
         <EditText
+            android:id="@+id/edtRepassword"
             android:layout_marginTop="@dimen/MarginTop"
             android:inputType="textPassword"
             android:hint="Confirm Password"
