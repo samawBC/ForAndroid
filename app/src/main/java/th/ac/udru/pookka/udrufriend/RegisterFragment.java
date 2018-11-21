@@ -71,19 +71,50 @@ public class RegisterFragment extends Fragment {
         EditText emailEditText = getView().findViewById(R.id.edtEmail);
         EditText passwordEditText = getView().findViewById(R.id.edtPassword);
         EditText repasswordEditText = getView().findViewById(R.id.edtRepassword);
+        EditText telEditText = getView().findViewById(R.id.edtTel);
 
         String nameString = nameEditText.getText().toString().trim();
         String emailString = emailEditText.getText().toString().trim();
         String passwordString = passwordEditText.getText().toString().trim();
         String repasswordString = repasswordEditText.getText().toString().trim();
+        String telString = telEditText.getText().toString().trim();
 
 
         if (aBoolean) {
             // myAlert.normalDialog(getString(R.string.title_have_space),getString(R.string.message_have_space));
             myAlert.normalDialog("No Avata", "Choose img");
+        } else if (checkSpace(nameString,emailString,passwordString,repasswordString,telString)) { //สร้างเมธอท checkspace มารับค่าชุดตัวแปรสตริงพวกนี้ เ
+            myAlert.normalDialog(getString(R.string.title_have_space),getString(R.string.message_have_space));
+
+        } else if (passwordString.equals(repasswordString)) {
+            //pss match
+            uploadToFirebase(nameString,emailString,passwordString,telString);
+        } else {
+            myAlert.normalDialog("Pss not match","Please type Pss again");
 
         }
 
+    }
+
+    private void uploadToFirebase(String nameString, String emailString, String passwordString, String telString) {
+
+    }
+
+    // รับค่าชุดตัวแปรสติง แล้วส่งข้อมูลไปให้การทำงานใน aboolean
+    private boolean checkSpace(String nameString,
+                               String emailString,
+                               String passwordString,
+                               String repasswordString,
+                               String telString) {
+
+        boolean result = false;
+        if (nameString.isEmpty() || emailString.isEmpty() || passwordString.isEmpty() ||repasswordString.isEmpty() || telString.isEmpty()) {
+            result =true;
+
+
+        }
+
+        return false;
     }
 
     @Override

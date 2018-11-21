@@ -69,6 +69,7 @@
             android:layout_height="wrap_content" />
 
         <EditText
+            android:id="@+id/edtTel"
             android:inputType="number"
             android:layout_marginTop="@dimen/MarginTop"
             android:hint="Telephone Number :"
