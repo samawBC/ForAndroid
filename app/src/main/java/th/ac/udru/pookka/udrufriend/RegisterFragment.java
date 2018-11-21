@@ -28,6 +28,8 @@ public class RegisterFragment extends Fragment {
 
     private Uri uri;
     private ImageView imageView;
+    private boolean aBoolean = true;
+
 
 
     @Override
@@ -50,11 +52,23 @@ public class RegisterFragment extends Fragment {
 
         if (item.getItemId() == R.id.itemUpload) {
 
+            checkData();
             return true ;
         }
 
         return super.onOptionsItemSelected(item);
 
+
+    }
+
+    private void checkData() {
+
+        MyAlert myAlert = new MyAlert(getActivity());
+
+        if (aBoolean) {
+        myAlert.normalDialog(getString(R.string.title_have_space),getString(R.string.message_have_space));
+
+        }
 
     }
 
@@ -75,6 +89,7 @@ public class RegisterFragment extends Fragment {
         if (resultCode == getActivity().RESULT_OK) {
 
            uri = data.getData();
+           aBoolean = false;
 
             try {
                 //

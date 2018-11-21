@@ -6,6 +6,6 @@
     <string name="email">Email :</string>
     <string name="password">password</string>
     <string name="register">สมัครสมาชิก</string>
-    <string name="message_have_space">Please Fill aAll Balnk</string>
+    <string name="message_have_space">Please Fill aAll Blank</string>
     <string name="title_have_space">Have space</string>
 </resources>
