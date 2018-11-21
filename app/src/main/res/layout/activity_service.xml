@@ -29,7 +29,6 @@
         android:layout_height="match_parent">
 
         <TextView
-
             android:textStyle="bold"
             android:textSize="@dimen/h1"
             android:text="Drawer Menu"
