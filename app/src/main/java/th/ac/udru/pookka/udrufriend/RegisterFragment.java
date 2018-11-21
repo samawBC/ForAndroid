@@ -11,6 +11,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.GestureDetector;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -104,7 +105,7 @@ public class RegisterFragment extends Fragment {
 
     }
 
-    private void uploadToFirebase(String nameString, String emailString, String passwordString, String telString) {
+    private void uploadToFirebase(final String nameString, String emailString, String passwordString, String telString) {
 
         final ProgressDialog progressDialog = new ProgressDialog(getActivity());
         progressDialog.setTitle("Please waite...");
@@ -121,9 +122,17 @@ public class RegisterFragment extends Fragment {
                 progressDialog.dismiss();
 
 
-//                register email
+//              Register email
 
-            }
+                String urlAvata = FindURLavata(nameString);
+                Log.d("20nov1", "urlAvata ==> " + urlAvata);
+                // ถ้าไม่ได้ให้ใช้ Logใwtf
+
+
+
+
+
+            } //onSuccess
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
@@ -137,6 +146,33 @@ public class RegisterFragment extends Fragment {
 //        register email
 
 
+    }
+
+    private String FindURLavata(String nameString) {
+
+
+        myFindURL(nameString);
+
+        return nameString;
+
+    }
+
+    private void myFindURL(String nameString) {
+        FirebaseStorage firebaseStorage = FirebaseStorage.getInstance();
+        StorageReference storageReference = firebaseStorage.getReference();
+
+        final String[] strings = new String[1];
+        storageReference.child("Avata").child(nameString)
+                .getDownloadUrl()
+                .addOnSuccessListener(new OnSuccessListener<Uri>() {
+                    @Override
+                    public void onSuccess(Uri uri) {
+
+                        strings[0] = uri.toString();
+
+
+                    }
+                });
     }
 
     // รับค่าชุดตัวแปรสติง แล้วส่งข้อมูลไปให้การทำงานใน aboolean
