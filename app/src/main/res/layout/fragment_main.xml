@@ -20,18 +20,21 @@
             android:layout_height="wrap_content" />
         <!--user-->
         <EditText
+            android:id="@+id/edtEmail"
             android:inputType="textEmailAddress"
             android:hint="@string/email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
         <!--password-->
         <EditText
+            android:id="@+id/edtPassword"
             android:inputType="textPassword"
             android:hint="@string/password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
         <!--login-->
         <Button
+            android:id="@+id/buttonLogin"
             android:text="Login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
