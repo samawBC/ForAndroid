@@ -68,6 +68,8 @@ public class ServiceActivity extends AppCompatActivity {
                         startActivity(new Intent(ServiceActivity.this,MapsActivity.class));
                         break;
                     case 2:
+                        getSupportFragmentManager().beginTransaction()
+                                .replace(R.id.layoutServiceFragment, new InfoFragment()).commit();
                         break;
                     case 3:
                         signOutService();

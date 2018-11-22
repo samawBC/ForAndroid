@@ -18,15 +18,18 @@ public class FriendAdepter extends RecyclerView.Adapter<FriendAdepter.FriendView
 
     private Context context;
     private ArrayList<String> displayNameStringArrayList, pathUrlStringArrayList;
+    private OnClickItem onClickItem;
     private LayoutInflater layoutInflater;  //layout  เสมือน
 
     public FriendAdepter(Context context,
                          ArrayList<String> displayNameStringArrayList,
-                         ArrayList<String> pathUrlStringArrayList) {
+                         ArrayList<String> pathUrlStringArrayList,
+                         OnClickItem onClickItem) {
         this.layoutInflater = LayoutInflater.from(context);
-        this.displayNameStringArrayList = displayNameStringArrayList;
+                this.displayNameStringArrayList = displayNameStringArrayList;
         this.pathUrlStringArrayList = pathUrlStringArrayList;
-    } //Constructor
+        this.onClickItem = onClickItem;
+    }
 
     @NonNull
     @Override
@@ -40,7 +43,7 @@ public class FriendAdepter extends RecyclerView.Adapter<FriendAdepter.FriendView
     }
 
     @Override
-    public void onBindViewHolder(@NonNull FriendViewHolder friendViewHolder, int i) {
+    public void onBindViewHolder(@NonNull final FriendViewHolder friendViewHolder, int i) {
 
         String urlPathString = pathUrlStringArrayList.get(i);
         String displayNameString = displayNameStringArrayList.get(i);
@@ -50,6 +53,13 @@ public class FriendAdepter extends RecyclerView.Adapter<FriendAdepter.FriendView
         Picasso.get().load(urlPathString)
                 .resize(100,100)
                 .into(friendViewHolder.circleImageView);
+
+        friendViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onClickItem.onClickItem(v,friendViewHolder.getAdapterPosition());
+            }
+        });
 
 
     }
@@ -69,7 +79,6 @@ public class FriendAdepter extends RecyclerView.Adapter<FriendAdepter.FriendView
 
             circleImageView = itemView.findViewById(R.id.circleImageFriend);
             textView = itemView.findViewById(R.id.txtDisplayName);
-
 
 
         } // constructor

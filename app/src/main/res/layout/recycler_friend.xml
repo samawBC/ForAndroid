@@ -14,7 +14,6 @@
     android:layout_width="100dp"
     android:layout_height="100dp" />
 
-
     <!--Display name-->
 <TextView
     android:layout_gravity="center_horizontal"
