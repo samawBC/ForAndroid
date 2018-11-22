@@ -35,7 +35,7 @@ public class ServiceActivity extends AppCompatActivity {
 
         createListview();
 
-        AddFragment(savedInstanceState);
+      //  AddFragment(savedInstanceState);
 
 
     } // main method
@@ -43,7 +43,7 @@ public class ServiceActivity extends AppCompatActivity {
     private void AddFragment(Bundle savedInstanceState) {
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
-                    .add(R.id.layoutMainFragment, new ServiceFragment()).commit();
+                    .add(R.id.layoutServiceFragment, new ServiceFragment()).commit();
         }
     }
 
