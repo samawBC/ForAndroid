@@ -27,7 +27,6 @@ public class ServiceFragment extends Fragment {
 //        Create RecyclerView
         createRecyclerView();
 
-
     }
 
     private void createRecyclerView() {
