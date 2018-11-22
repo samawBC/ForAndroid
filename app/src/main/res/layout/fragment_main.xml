@@ -14,12 +14,14 @@
 
         <!--logo-->
         <ImageView
-            android:src="@drawable/logo1"
+            android:src="@drawable/logo_final"
             android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <!--user-->
         <EditText
+            android:textSize="@dimen/h3"
+            android:background="@drawable/email"
             android:id="@+id/edtEmail"
             android:inputType="textEmailAddress"
             android:hint="@string/email"
@@ -27,6 +29,8 @@
             android:layout_height="wrap_content" />
         <!--password-->
         <EditText
+            android:textSize="@dimen/h3"
+            android:background="@drawable/password"
             android:id="@+id/edtPassword"
             android:inputType="textPassword"
             android:hint="@string/password"
@@ -34,6 +38,8 @@
             android:layout_height="wrap_content" />
         <!--login-->
         <Button
+            android:textColor="#ffffff"
+            android:background="@drawable/button1"
             android:id="@+id/buttonLogin"
             android:text="Login"
             android:layout_width="match_parent"

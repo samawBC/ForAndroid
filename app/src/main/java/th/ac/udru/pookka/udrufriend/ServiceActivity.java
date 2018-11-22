@@ -35,6 +35,11 @@ public class ServiceActivity extends AppCompatActivity {
 
         createListview();
 
+        if (savedInstanceState == null) {
+            getSupportFragmentManager().beginTransaction()
+                    .add(R.id.layoutMainFragment, new ServiceFragment()).commit();
+        }
+
 
     } // main method
 

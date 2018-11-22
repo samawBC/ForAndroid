@@ -265,7 +265,7 @@ public class RegisterFragment extends Fragment {
     }   // Result
 
     private void avataController() {
-        imageView = getView().findViewById(R.id.imageViewAvartar);
+        imageView = getView().findViewById(R.id.imageViewAvrtar);
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

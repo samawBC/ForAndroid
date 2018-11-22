@@ -23,20 +23,24 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TextView
+            android:textSize="@dimen/h1"
             android:textStyle="bold"
             android:text="Registration information"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <!--avatar-->
         <ImageView
+
             android:scaleType="centerInside"
-            android:id="@+id/imageViewAvartar"
+            android:id="@+id/imageViewAvrtar"
             android:layout_gravity="center_horizontal"
-            android:src="@drawable/logo1"
+            android:src="@drawable/avata_final"
             android:layout_width="wrap_content"
             android:layout_height="150dp" />
         <!--name-->
         <EditText
+            android:textSize="@dimen/h2"
+            android:background="@drawable/name"
             android:id="@+id/edtName"
             android:inputType="text"
             android:hint="Firstname FamilyName"
@@ -45,6 +49,8 @@
 
         <!--email-->
         <EditText
+            android:textSize="@dimen/h2"
+            android:background="@drawable/email"
             android:id="@+id/edtEmail"
             android:layout_marginTop="@dimen/MarginTop"
             android:inputType="textEmailAddress"
@@ -53,6 +59,8 @@
             android:layout_height="wrap_content" />
         <!--password-->
         <EditText
+            android:textSize="@dimen/h2"
+            android:background="@drawable/password"
             android:id="@+id/edtPassword"
             android:layout_marginTop="@dimen/MarginTop"
             android:inputType="textPassword"
@@ -61,6 +69,8 @@
             android:layout_height="wrap_content" />
         <!--confirm password-->
         <EditText
+            android:textSize="@dimen/h2"
+            android:background="@drawable/password"
             android:id="@+id/edtRepassword"
             android:layout_marginTop="@dimen/MarginTop"
             android:inputType="textPassword"
@@ -68,15 +78,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
-        <EditText
-            android:id="@+id/edtTel"
-            android:inputType="number"
-            android:layout_marginTop="@dimen/MarginTop"
-            android:hint="Telephone Number :"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
         <Button
+        android:textColor="#ffffff"
+            android:textSize="@dimen/h1"
+            android:background="@drawable/button1"
             android:text="Register"
             android:layout_marginTop="@dimen/MarginTop"
             android:layout_width="match_parent"
